@@ -1,0 +1,52 @@
+# OS junk
+[Tt]humbs.db
+.DS_Store
+
+# Project
+**/*.tsbuildinfo
+**/*/coverage
+**/*/lib/
+**/*/esm/
+**/**/dist/
+**/**/build-interface/
+**/**/manifest.yml
+**/**/*.tgz
+**/**/assets/js/*.bundle.js*
+**/**/assets/generated/**/*
+!**/**/assets/generated/.gitkeep
+**/**/yarn.lock
+**/**/public/
+**/**/.cache-loader
+**/**/lib-srv
+licenses.csv
+**/.docker-env
+myaudi-docker-compose.yml
+npm-packages-offline-cache
+cypress/videos
+
+# IDE
+.idea/
+*.iml
+
+# Environment
+node_modules/
+local_modules/
+*.log
+npm-debug.log*
+.env
+.env.exp
+properties/*
+*.properties.zip
+manifest-myaudi*.yml
+Staticfile*
+.invoke.*.js
+
+# Tests
+coverage/
+cypress/screenshots/
+/.composed/
+**/*.exp
+
+# Fixtures of old mocking service
+.acme/
+.sslconfig
