@@ -1,0 +1,11 @@
+{
+  "driver": [
+    {
+      "question": "Wer ist Weltmeister von 2021?",
+      "answer": "Max Verstappen",
+      "hint1": "Er ist der jüngste Sieger der Formel 1",
+      "hint2": "Er ist aus der Niederlande",
+      "hint3": "Er fährt für RedBull"
+    }
+  ]
+}
