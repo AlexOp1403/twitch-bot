@@ -3,6 +3,7 @@
 .DS_Store
 
 # Project
+settings.json
 **/*.tsbuildinfo
 **/*/coverage
 **/*/lib/
@@ -20,7 +21,6 @@
 **/**/lib-srv
 licenses.csv
 **/.docker-env
-myaudi-docker-compose.yml
 npm-packages-offline-cache
 cypress/videos
 
@@ -37,7 +37,6 @@ npm-debug.log*
 .env.exp
 properties/*
 *.properties.zip
-manifest-myaudi*.yml
 Staticfile*
 .invoke.*.js
 
