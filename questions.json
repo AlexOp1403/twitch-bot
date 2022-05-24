@@ -1,11 +1,18 @@
 {
-  "driver": [
+ "quiz": [
     {
       "question": "Wer ist Weltmeister von 2021?",
       "answer": "Max Verstappen",
       "hint1": "Er ist der jüngste Sieger der Formel 1",
       "hint2": "Er ist aus der Niederlande",
-      "hint3": "Er fährt für RedBull"
-    }
-  ]
+      "hint3": "Er fährt für Red Bull"
+    },
+   {
+     "question": "Wer hat die meisten Rennsiege?",
+     "answer": "Lewis Hamilton",
+     "hint1": "Er gehört zu den ältesten Fahrer des aktuellen Formel 1 Grids?",
+     "hint2": "Er wird seit Dezember 2021 auch mit Sir angesprochen",
+     "hint3": "Er fährt für Mercedes"
+   }
+ ]
 }
