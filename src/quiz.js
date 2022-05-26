@@ -1,9 +1,18 @@
 import questions from "../questions.json";
+import fs from 'fs';
 import {botMessage} from "./app";
 
 export let currentQuestion;
-let quizStarted = false;
-export let questionAnswered;
+export let quizStarted = false;
+export let questionAnswered = false;
+
+export function setQuestionAnswered(value) {
+    questionAnswered = value;
+}
+
+export function getQuizStarted() {
+    return quizStarted
+}
 
 export function questionQuiz(userMessage){
     if(!quizStarted){
@@ -11,11 +20,20 @@ export function questionQuiz(userMessage){
         quiz(currentQuestion)
     }
     scanMessage(userMessage)
+    if(questionAnswered){
+        return Math.round(1000 / currentQuestion.alreadyAnswered)
+    }
+    return 0
 }
 
 function scanMessage(message){
     if(message.toLowerCase() === currentQuestion.answer.toLowerCase()) {
         questionAnswered = true
+        quizStarted = false
+        currentQuestion.alreadyAnswered++
+        fs.writeFile('questions.json', JSON.stringify(questions), (err) => {
+            if (err) throw err;
+        });
         botMessage(`Korrekt: Es ist ${currentQuestion.answer}`)
         clearTimeout(timer1);
         clearTimeout(timer2);
@@ -47,5 +65,6 @@ function quiz(){
     }, 15000);
     timer4 = setTimeout(function () {
         botMessage(`Lösung: Es ist ${currentQuestion.answer}`);
+        quizStarted = false
     }, 20000);
 }

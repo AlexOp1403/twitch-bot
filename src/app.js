@@ -1,12 +1,8 @@
 import tmi from 'tmi.js';
-import {questionQuiz, questionAnswered} from './quiz.js';
+import {questionQuiz, questionAnswered, setQuestionAnswered, getQuizStarted} from './quiz.js';
 import settings from "../settings.json";
 
 let currentChannel;
-let driverQuizStarted = false;
-let teamsQuizStarted = false;
-let tracksQuizStarted = false;
-let iRacingQuizStarted = false;
 let pointsAdded = 0;
 let quizStarted = false;
 
@@ -35,16 +31,19 @@ client.on('message', (channel, userstate, message, self) => {
     quizStarted = true;
   }
   if(quizStarted){
-    questionQuiz(message);
+    pointsAdded = questionQuiz(message);
+  }
+
+  if(!getQuizStarted()){
+    quizStarted = false;
   }
 
   if(questionAnswered){
     client.say(channel, `@${userstate.username}, 'GG!'`);
-    client.say(channel,`"!addPoints @${userstate.username} @${pointsAdded}"` )
-    questionAnswered = false;
+    client.say(channel,`!addPoints ${userstate.username} ${pointsAdded}` )
+    setQuestionAnswered(false);
     pointsAdded = 0;
     quizStarted = false;
-
   }
 });
 
