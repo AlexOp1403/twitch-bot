@@ -39,7 +39,7 @@ client.on('message', (channel, userstate, message, self) => {
   }
 
   if(questionAnswered){
-    client.say(channel, `@${userstate.username}, 'GG!'`);
+    client.say(channel, `@${userstate.username}, GG! Du hast ${pointsAdded} Punkte erreicht!`);
     client.say(channel,`!addPoints ${userstate.username} ${pointsAdded}` )
     setQuestionAnswered(false);
     pointsAdded = 0;

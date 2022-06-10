@@ -21,7 +21,7 @@ export function questionQuiz(userMessage){
     }
     scanMessage(userMessage)
     if(questionAnswered){
-        return Math.round(1000 / currentQuestion.alreadyAnswered)
+        return Math.ceil(1000 / currentQuestion.alreadyAnswered)
     }
     return 0
 }
